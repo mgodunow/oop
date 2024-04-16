@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "film.h"
+
+#include "car.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,23 +18,15 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnSearch_clicked();
-
-    void on_btnAddFile_clicked();
-
     void on_btnAdd_clicked();
 
-
-
-    void on_btnSave_clicked();
-
-    void on_btnSort_clicked();
+    void on_btnSearch_clicked();
 
 private:
     Ui::MainWindow *ui;
 
-    void draw(Film f);
+    void draw(car c);
 
-    std::vector<Film> films;
+    std::vector<car> cars;
 };
 #endif // MAINWINDOW_H

@@ -1,77 +1,45 @@
-#include <fstream>
-#include <algorithm>
-#include <QFileDialog>
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "film.h"
 
+#include "car.h"
+#include "csvreader.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow){
-
+    , ui(new Ui::MainWindow)
+{
     ui->setupUi(this);
-
-
+    ui->btnAdd->setEnabled(false);
 }
 
-
-MainWindow::~MainWindow(){
+MainWindow::~MainWindow()
+{
     delete ui;
 }
 
-
 void MainWindow::on_btnSearch_clicked(){
-    QString text = Film::search();
+    QString text = CSVReader::search();
     if(text != ""){
         ui->linePath->setText(text);
-        ui->btnAddFile->setEnabled(true);
+        ui->btnAdd->setEnabled(true);
     } else {
-        ui->linePath->setText("File error");
-        ui->btnAddFile->setEnabled(false);
+        ui->linePath->setText("file error");
+        ui->btnAdd->setEnabled(false);
     }
 }
-
-
-void MainWindow::on_btnAddFile_clicked(){
-     ui->textBrowser->clear();
-     films = Film::readFile(ui->linePath->text());
-     for(const auto& f:films){
-         draw(f);
-     }
-}
-
 
 void MainWindow::on_btnAdd_clicked(){
-    int id = ui->lineID->text().toInt();
-    QString name = ui->lineName->text();
-    int year = ui->lineYear->text().toInt();
-    Film f = {id, name, Film::setGenre(ui->cbGenre->currentText()), year};
-    films.push_back(f);
-
-    if(name.compare("") && year != 0)
-        draw(f);
-
-    ui->lineID->clear();
-    ui->lineName->clear();
-    ui->lineYear->clear();
-}
-
-void MainWindow::draw(Film f){
-    ui->textBrowser->append(QString::number(f.getId()) + ";" + f.getName() + ";" + f.getGenreString() + ";" + QString::number(f.getYear()));
-}
-
-void MainWindow::on_btnSave_clicked(){
-    Film::saveFile(ui->linePath_2->text(), films, ui->rbtCondition->isChecked());
-}
-
-
-void MainWindow::on_btnSort_clicked(){
     ui->textBrowser->clear();
-    std::sort(films.begin(), films.end(), [](Film& lhs, Film& rhs){return lhs.getYear() > rhs.getYear();});
-    for(const auto& f:films){
-        draw(f);
+    auto cars = CSVReader::readFile(ui->linePath->text());
+    std::sort(cars.begin(), cars.end(), [](car& lhs, car& rhs){return lhs.getEnginePower() > rhs.getEnginePower();});
+    for(auto& c:cars){
+        if (c.getEngineType() == 0 && c.getEnginePower() > 249)
+        {
+            draw(c);
+        }
     }
 }
 
+void MainWindow::draw(car c){
+    ui->textBrowser->append(QString::number(c.getId()) + " " + c.getBrand() + " " + c.getModel() + " " + c.getEngineTypeString()+ " "+ QString::number(c.getEnginePower()));
+}
