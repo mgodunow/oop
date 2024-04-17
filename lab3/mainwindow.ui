@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>797</width>
+    <height>670</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>751</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAdd">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add file</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="linePath">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>10</y>
+      <width>541</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSearch">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>10</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ID">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>540</y>
+      <width>31</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>540</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>540</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Brand</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="brand">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>540</y>
+      <width>91</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>540</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Model</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="model">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>540</y>
+      <width>101</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="engineType">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>540</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>ICE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Diesel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hybrid</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Electro</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>540</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Engine type</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>540</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Power</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="power">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>540</y>
+      <width>51</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddCar">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>540</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="savePath">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>580</y>
+      <width>641</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSave">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>580</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>797</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
