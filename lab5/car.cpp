@@ -19,7 +19,7 @@ QString car::getModel() {
     return model;
 }
 
-enum car::engineType car::getEngineType() {
+enum engineType car::getEngineType() {
     return enginetype;
 }
 
@@ -27,8 +27,8 @@ int car::getEnginePower() {
     return enginePower;
 }
 
-void car::setEngineType(int engineType) {
-    engineType = static_cast<car::engineType>(engineType);
+void car::setEngineType(int _engineType) {
+    car::enginetype = static_cast<engineType>(_engineType);
 }
 
 QString car::getEngineTypeString() {
@@ -63,7 +63,7 @@ void car::setEngineTypeString(QString et) {
         num = 3;
         }
 
-    enginetype = static_cast<car::engineType>(num);
+    enginetype = static_cast<engineType>(num);
 }
 
 car::~car() {

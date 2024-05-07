@@ -3,11 +3,11 @@
 #ifndef CAR_H
 #define CAR_H
 
+enum engineType{ICE, DIESEL, HYBRID, ELECTRO};
 
 class car
 {
 private:
-    enum engineType{ICE, DIESEL, HYBRID, ELECTRO};
 
     int id;
     QString brand;
@@ -23,7 +23,7 @@ public:
     engineType getEngineType();
     QString getEngineTypeString();
     void setEngineType(int engineType);
-    void setEngineTypeString(QString engineType);
+    void setEngineTypeString(QString _engineType);
     int getEnginePower();
 };
 
